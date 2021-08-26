@@ -1,7 +1,7 @@
 # run script in docker image opensuse/leap:latest
 
 This github action let you run a script/file inside the docker image
-[i386/debian:latest](https://hub.docker.com/r/opensuse/leap).
+[opensuse/leap:latest](https://hub.docker.com/r/opensuse/leap).
 
 I will not maintain this repository. If you like it, please fork it and use
 your own fork! This repository may break once!
