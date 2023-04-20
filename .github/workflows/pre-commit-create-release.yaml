@@ -1,0 +1,30 @@
+name: pre-commit
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  pre-commit:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+      # https://github.com/marketplace/actions/checkout
+    - uses: actions/setup-python@v4
+      # https://github.com/marketplace/actions/setup-python
+    - uses: pre-commit/action@v3.0.0
+      # https://github.com/pre-commit/action
+      #continue-on-error: true
+  create-release:
+    needs: pre-commit
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+    - uses: actions/checkout@v3
+    - uses: ncipollo/release-action@v1
+      with:
+        makeLatest: true
+        tag: v1
