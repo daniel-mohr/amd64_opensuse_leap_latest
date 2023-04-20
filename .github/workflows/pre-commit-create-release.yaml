@@ -27,4 +27,4 @@ jobs:
     - uses: ncipollo/release-action@v1
       with:
         makeLatest: true
-        tag: v0
+        tag: v1
