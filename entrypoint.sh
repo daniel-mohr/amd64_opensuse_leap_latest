@@ -3,5 +3,5 @@ set -x
 echo "#######################"
 echo "# run: $1"
 echo "#######################"
-cd /github/workspace
-exec $1
+cd /github/workspace || exit
+exec "$1"
